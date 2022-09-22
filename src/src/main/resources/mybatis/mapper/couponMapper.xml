@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    
+    <mapper namespace="ezenproject.dao.CouponDAO">
+    
+    
+    
+    
+    
+    
+    
+    <!--//////////// 여기부터 관리자 페이지 매퍼////////////  -->
+    
+    
+    <insert id="saveNewCoupon" parameterType="CouponDTO">
+    insert into ezencoupons
+    (num, coupon_number, member_number, coupon_type, coupon_value  )
+    values(ezencoupons_num_seq.nextval, #{coupon_number}, #{member_number},
+    #{coupon_type}, #{coupon_value})
+    
+    
+    </insert>
+    
+    
+    <!-- [공용] 해당 회원의 쿠폰 리스트 출력  -->
+    <select id="list" parameterType="String" resultType="CouponDTO">
+    <![CDATA[
+    select*from ezencoupons 
+    where member_number=#{member_number}
+    order by coupon_type, coupon_value, num
+    ]]>
+    </select>
+    
+    
+    <delete id="deleteCoupon" parameterType="int">
+    delete from ezencoupons
+    where num=#{num}
+    </delete>
+    
+    
+    <!-- /////////////여기까지 관리자 페이지 매퍼 ////////////////  -->
+    
+    
+    <!--쿠폰 사용할 때 없어지는것  -->
+    <delete id="usedCoupon" parameterType="String">
+    
+    delete from ezencoupons
+    where coupon_number=#{coupon_number}
+    </delete>
+    
+    
+    </mapper>

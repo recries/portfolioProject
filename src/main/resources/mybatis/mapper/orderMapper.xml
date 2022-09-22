@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    
+    <mapper namespace="ezenproject.dao.OrderDAO">
+  
+  <!--여기서부터 관리자 페이지 매퍼입니다.  -->
+  
+  <resultMap type="MemberDTO" id="MemberDTO">
+  <id property="member_id" column="member_id"/>
+  <id property="member_name" column="member_name"/>
+  <id property="member_phone" column="member_phone"/>
+  </resultMap>
+  <resultMap type="BookDTO" id="BookDTO">
+  <id property="num" column="num"/>
+  <id property="book_title" column="book_title"/>
+  <id property="book_price" column="book_price"/>
+   <id property="book_author" column="book_author" />
+      <id property="book_publisher" column="book_publisher" />
+       <id property="book_content" column="book_content" />
+      <id property="book_isbn" column="book_isbn" />
+       <id property="book_img" column="book_img" />
+  </resultMap>
+  
+  <resultMap type="OrderDTO" id="OrderResult">
+  <id property="num" column="num"/>
+  <id property="order_number" column="order_number"/>
+  <id property="order_cost" column="order_cost"/>
+  <id property="member_number" column="member_number"/>
+  <id property="book_id" column="book_id"/>
+  <id property="order_status" column="order_status"/>
+  <id property="order_phone" column="order_phone"/>
+  <id property="order_name" column="order_name"/>
+  <id property="order_address" column="order_address"/>
+  <id property="book_qty" column="book_qty"/>
+  
+  
+  <collection property="ezenmembers" resultMap="MemberDTO"/>
+  <collection property="ezenbooks" resultMap="BookDTO"/>
+  </resultMap>
+  
+    
+    <select id="list" resultMap="OrderResult">
+    <![CDATA[
+    select o.num, o.order_number, o.order_cost, o.member_number, o.book_id, o.order_status, o.book_qty,
+    m.member_id, b.book_title, b.book_price, o.order_phone, o.order_name, o.order_address, m.member_name, m.member_phone
+    from ezenbooks b, ezenmembers m, ezenorders o
+    where o.member_number = m.member_number
+    and o.book_id=b.book_id
+    order by o.num
+    ]]>
+    </select>
+    
+    
+ <update id="statusChange" parameterType="OrderDTO">
+ update ezenorders set
+ order_status = #{order_status}
+ where num=#{num}
+ </update>
+    
+    
+    <delete id="deleteData" parameterType="int">
+    delete from ezenorders
+    where num=#{num}
+    </delete>
+    
+    
+    
+    
+    <!--여기까지 관리자 페이지 매퍼입니다.  -->
+    
+    
+    
+    <select id="myOrderList" resultMap="OrderResult" parameterType="OrderDTO">
+    <![CDATA[
+    select o.num, o.order_number, o.order_cost, o.member_number, o.book_id, o.order_status, o.book_qty,
+    m.member_id, b.book_title, b.book_price, o.order_phone, o.order_name, o.order_address, m.member_name, b.book_img
+    from ezenbooks b, ezenmembers m, ezenorders o
+    where o.member_number = m.member_number
+    and o.book_id=b.book_id
+    and o.member_number=#{member_number}
+    order by o.num
+    ]]>
+    </select>
+    
+    
+    
+     <select id="selectOrderInformation"
+   		parameterType="OrderDTO"
+		resultMap="OrderResult">
+	SELECT o.num, b.num, b.book_title, b.book_publisher,b.book_author, b.book_price,b.book_content,b.book_img, b.book_isbn,
+	 o.order_number, o.order_cost, o.member_number, o.book_id, o.order_status, o.book_qty
+	FROM ezenorders o, ezenbooks b, ezenmembers m 
+	WHERE 
+	o.book_id = b.book_id 
+	AND o.num=#{num}
+	</select> 
+    
+    
+    <!--주문이 들어가는 행위  -->
+    <insert id="orderSave" parameterType="OrderDTO">
+    insert into ezenorders (num, order_number, order_cost, member_number, book_id, order_status,
+    order_phone, order_name, order_address, book_qty)
+    values(ezenorders_num_seq.nextval, #{order_number}, #{order_cost}, #{member_number}, #{book_id}, 1,
+    #{order_phone}, #{order_name}, #{order_address}, #{book_qty})
+    
+    </insert>
+    
+    <!--배송 상태 확인  -->
+     <select id="checkOrderStatus"
+    parameterType="OrderDTO"
+    resultMap="OrderResult">
+    SELECT o.order_status, o.order_number, o.order_name, o.order_phone, o.order_address, o.order_phone, 
+    m.member_name, m.member_phone, b.book_title, o.num, o.book_qty
+    FROM ezenorders o, ezenbooks b, ezenmembers m 
+    WHERE  m.member_number = o.member_number 
+    AND o.book_id = b.book_id
+    AND o.num = #{num} 
+    </select>
+    
+    
+    <!-- 주문 취소하는 행위  -->
+    <update id="updateOrderInformation"
+    parameterType="OrderDTO">
+    	UPDATE ezenorders SET order_status=0
+		WHERE order_number=#{order_number}
+    </update>
+    
+    
+    
+    </mapper>

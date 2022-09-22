@@ -1,0 +1,63 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.1'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.session:spring-session-core'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+	implementation 'javax.servlet:jstl:1.2'
+	
+	
+	
+// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-aop
+implementation 'org.springframework.boot:spring-boot-starter-aop:2.7.0'
+
+
+
+	// https://mvnrepository.com/artifact/org.projectlombok/lombok
+compileOnly 'org.projectlombok:lombok:1.18.12'
+		
+	
+// https://mvnrepository.com/artifact/org.mybatis.spring.boot/mybatis-spring-boot-starter
+implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.0'
+
+// https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc6
+implementation 'com.oracle.database.jdbc:ojdbc8'
+
+	
+	// https://mvnrepository.com/artifact/org.apache.tiles/tiles-jsp
+implementation 'org.apache.tiles:tiles-jsp:3.0.8'
+	
+	// https://mvnrepository.com/artifact/org.apache.tiles/tiles-jsp
+implementation 'org.apache.tiles:tiles-jsp:3.0.8'
+	
+	// https://mvnrepository.com/artifact/org.apache.tiles/tiles-servlet
+implementation 'org.apache.tiles:tiles-servlet:3.0.8'
+	
+	// https://mvnrepository.com/artifact/org.apache.tiles/tiles-core
+implementation 'org.apache.tiles:tiles-core:3.0.8'
+	
+	// https://mvnrepository.com/artifact/org.apache.tiles/tiles-api
+implementation 'org.apache.tiles:tiles-api:3.0.8'
+	
+	// https://mvnrepository.com/artifact/org.apache.tiles/tiles-el
+implementation 'org.apache.tiles:tiles-el:3.0.8'
+	
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

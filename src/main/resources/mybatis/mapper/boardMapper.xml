@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+ <mapper namespace="ezenproject.dao.BoardDAO">
+ 
+   <resultMap type="MemberDTO" id="MemberDTO">
+  <id property="member_id" column="member_id"/>
+  <id property="member_email" column="member_email"/>
+  </resultMap>
+  
+  <resultMap type="BoardDTO" id="BoardResult">
+  <id property="num" column="num" />
+  <id property="board_type" column="board_type" />
+
+  <collection property="ezenmembers" resultMap="MemberDTO"/>
+  </resultMap>
+ 
+ 	<!-- 본인이 작성한 게시판 리스트 -->
+ 	<select id="myBoardList" parameterType="HashMap" resultType="BoardDTO">
+		<![CDATA[
+		SELECT b.* FROM
+		(SELECT a.*, rownum as rm FROM
+		(SELECT * FROM ezenboards WHERE board_type = #{board_type} AND member_id= #{member_id} ORDER BY num desc, re_step desc )a)b
+		WHERE b.rm>=#{startRow} AND b.rm<= #{endRow}
+		]]>
+	</select>
+ 	
+ 	<!-- 본인 작성 게시글 개수 -->
+	<select id="myCount" parameterType="HashMap" resultType="int">
+		SELECT count(*) FROM ezenmembers m, ezenboards b WHERE m.member_id = b.member_id AND b.board_type=#{board_type} 
+		AND m.member_id=#{member_id}
+	</select>
+ 
+ 	<!-- 관리자 게시판 관리용 리스트 -->
+ 	<select id="listAll" parameterType="int" resultType="BoardDTO">
+ 	SELECT * FROM ezenboards WHERE board_type=#{board_type} ORDER BY ref DESC, re_step ASC
+ 	</select>
+ 	<!-- 게시판 개수 -->
+	<select id="count" resultType="int">
+		SELECT count(*) FROM ezenboards WHERE board_type=#{board_type}
+	</select>
+	
+	<!-- 자유게시판 리스트 -->
+	<select id="list" parameterType="BoardDTO" resultType="BoardDTO">
+		<![CDATA[
+		SELECT b.* FROM
+		(SELECT a.*, rownum as rm FROM
+		(SELECT * FROM ezenboards WHERE board_type = 0 ORDER BY ref DESC, re_step ASC)a)b
+		WHERE b.rm>=#{startRow} AND b.rm<= #{endRow}
+		]]>
+	</select>
+	
+	<!-- qna,리부게시판 리스트 -->
+	<select id="otherBoardList" parameterType="HashMap" resultType="BoardDTO">
+		<![CDATA[
+		SELECT b.* FROM
+		(SELECT a.*, rownum as rm FROM
+		(SELECT * FROM ezenboards WHERE board_type = #{board_type} ORDER BY ref DESC, re_step ASC)a)b
+		WHERE b.rm>=#{startRow} AND b.rm<= #{endRow}
+		]]>
+	</select>
+	
+	
+	<!-- 게시글 작성 -->
+	<insert id="save" parameterType="BoardDTO">
+		INSERT INTO ezenboards(num,member_id,member_email,subject,reg_date,readcount,ref,re_step,re_level,content,board_type,upload) 
+		VALUES (
+		<choose>
+		<when test ="board_type==0">
+		ezenfreeboards_num_seq.nextval
+		</when>
+		<when test ="board_type==1">
+		ezenreviewboards_num_seq.nextval
+		</when>
+		<otherwise>
+		ezenqnaboards_num_seq.nextval
+		</otherwise>
+		</choose>,
+		#{member_id},#{member_email},#{subject},sysdate,0,
+		<choose>
+		<when test="ref==0 and board_type==0">
+		ezenfreeboards_num_seq.nextval
+		</when>
+		<when test="ref==0 and board_type==1">
+		ezenreviewboards_num_seq.nextval
+		</when>
+		<when test="ref==0 and board_type==2">
+		ezenqnaboards_num_seq.nextval
+		</when>
+		<otherwise>
+		#{ref}
+		</otherwise>
+		</choose>
+		,#{re_step},#{re_level},#{content},#{board_type},#{upload, jdbcType=VARCHAR})
+	</insert>
+	
+	<!-- 조회수 -->
+	<update id="readCount" parameterType="BoardDTO">
+		UPDATE ezenboards SET readcount = readcount + 1 WHERE num = #{num} AND board_type=#{board_type}
+	</update>
+	
+	<!-- 뷰페이지 -->
+	<select id="content" parameterType="BoardDTO" resultType="BoardDTO">
+		SELECT * FROM ezenboards WHERE num=#{num} AND board_type=#{board_type}
+	</select>
+	
+	<!-- 답변글 체크 -->
+	<update id="reStepCount" parameterType="BoardDTO">
+		UPDATE ezenboards SET re_step = re_step+1
+		WHERE ref=#{ref} AND re_step > #{re_step}
+	</update>
+	
+	<!-- 업로드 파일 다운로드 -->
+	<select id="getFile" parameterType="BoardDTO" resultType="String">
+		SELECT
+		upload FROM ezenboards WHERE num=#{num} AND board_type = #{board_type}
+	</select>
+	
+	<!-- 게시글 수정 -->
+	<update id="update" parameterType="BoardDTO">
+		UPDATE ezenboards SET subject=#{subject}, content=#{content}
+		<if test="upload!=null">
+		, upload=#{upload}
+		</if>
+		WHERE num=#{num} AND board_type = #{board_type}
+	</update>
+	
+	<!-- 게시글 삭제 -->
+	<delete id="delete" parameterType="BoardDTO">
+	DELETE FROM ezenboards
+	WHERE num=#{num} AND board_type = #{board_type}
+	</delete>
+	
+
+ </mapper>

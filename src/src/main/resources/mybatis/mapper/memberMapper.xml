@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    
+    
+    <mapper namespace="ezenproject.dao.MemberDAO">
+    
+    <!-- 여기서부터 관리자 페이지 매퍼입니다.  -->
+    
+    <select id="list" resultType="MemberDTO">
+     <![CDATA[
+    select * from ezenmembers order by num
+     ]]>
+    
+    </select>
+    
+    
+    <!--마이페이지 공용  -->
+    <!-- 회원 1명의 정보  -->
+     <select id="selectOne" resultType="MemberDTO">
+    select*from ezenmembers where num=#{num}
+    </select>
+    
+    
+     <update id="statusChangeOn" parameterType="MemberDTO">
+    update ezenmembers set
+    member_status=1
+    where num=#{num}
+    </update>
+    
+    
+    <!--마이 페이지 공용  -->
+    <!--회원 탈퇴 신청 /처리  -->
+    <update id="statusChangeOff" parameterType="MemberDTO">
+    update ezenmembers set
+    member_status=0
+    where num=#{num}
+    </update>
+    
+    <update id="typeChangeOn" parameterType="MemberDTO">
+    update ezenmembers set
+    member_type=1
+    where num=#{num}
+    </update>
+    
+    <update id="typeChangeOff" parameterType="MemberDTO">
+    update ezenmembers set
+    member_type=0
+    where num=#{num}
+    </update>
+    
+    
+    <delete id="deleteData" parameterType="int">
+    delete from ezenmembers
+    where num=#{num}
+    </delete>
+    
+    <!-- 여기까지 관리자 페이지 매퍼입니다.  -->
+    
+    
+    <!--로그인 하는 행위  -->
+    <select id="loginCheck" resultType="MemberDTO" parameterType="MemberDTO">
+    <![CDATA[
+		select * from ezenmembers	
+		where member_id=#{member_id} and member_pass=#{member_pass}
+		and member_status=1
+	]]>
+    </select>
+    
+    
+    <!--회원 가입하는 행위  -->
+    <insert id="insertMember"  parameterType="MemberDTO">
+	    <![CDATA[
+		 insert into ezenmembers(num, member_number, member_id,member_pass, member_email,
+		 						 member_phone,member_address, member_type, member_status, member_name 
+		 						 )
+		 values(ezenmembers_num_seq.nextval, #{member_number}, #{member_id}, #{member_pass},
+		 		#{member_email},#{member_phone},#{member_address},0, 1, #{member_name}
+		 		 )
+		]]>     
+		
+	
+ </insert>    
+    
+    <!-- 회원 정보 수정하는 행위 -->
+     <update id="updateMemberInformation"
+    parameterType="MemberDTO">
+    	UPDATE EZENMEMBERS SET member_pass=#{member_pass}, member_address=#{member_address}, member_phone=#{member_phone},
+		member_email=#{member_email}
+		WHERE num=#{num}
+    </update>
+    
+    
+    
+    
+    </mapper>

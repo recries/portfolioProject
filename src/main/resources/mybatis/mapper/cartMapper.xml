@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    
+    
+    <mapper namespace="ezenproject.dao.CartDAO">
+    <!-- 장바구니 데이터 구현 매퍼 -->
+    <!-- 장바구니 생성 매퍼 -->
+    
+    <!-- 카트 체크  -->
+    <select id="checkCart" resultType="CartDTO" >
+		 <![CDATA[
+		SELECT * FROM ezencarts 
+		WHERE member_number = #{member_number} and book_id = #{book_id}
+	]]>
+	</select>
+    
+    <insert id="addCart" >
+	
+		INSERT INTO ezencarts (num, member_number, book_id, cart_amount)
+        VALUES 
+          (seq_cart.nextval, #{member_number}, #{book_id}, #{cart_amount} )
+	
+	</insert>
+	
+	
+	<!-- 카트 삭제 -->
+	<delete id="deleteCart" parameterType="int">
+	
+		DELETE FROM ezencarts WHERE num = #{num}
+	
+	</delete>
+	
+	<!-- 카트 수량 수정 -->
+	<update id="modifyCount" parameterType="CartDTO">
+		UPDATE ezencarts SET cart_amount=#{cart_amount} WHERE num = #{num}
+	</update>
+	
+	<select id="cartlist" resultType="CartDTO">
+	select a.num, a.member_number, a.book_id, a.cart_amount, b.book_title, b.book_price, b.book_img, b.book_author, b.book_publisher, b.book_category
+		from ezencarts a left outer join ezenbooks b on a.book_id = b.book_id
+		where member_number = #{member_number}	
+	
+	</select>
+	
+	
+	<!-- 카트 목록 -->
+	<select id="getCart" resultType="CartDTO">
+	 <![CDATA[
+	select a.num, a.member_number, a.book_id, a.cart_amount, b.book_title, b.book_price, b.book_img, b.book_author, b.book_publisher, b.book_category
+		from ezencarts a left outer join ezenbooks b on a.book_id = b.book_id
+		where member_number = #{member_number}	
+	
+	]]>
+	</select>
+	
+	<delete id="deleteOrderCart">
+	
+	DELETE FROM ezencarts WHERE member_number = #{member_number} AND book_id = #{book_id}
+	
+	</delete>	
+
+
+<delete id="allDelete" >
+		delete FROM ezencarts o
+		WHERE o.member_number = (
+        SELECT m.member_number
+        FROM ezenmembers m
+        WHERE m.member_number = #{member_number})
+	</delete>
+
+    
+    </mapper>

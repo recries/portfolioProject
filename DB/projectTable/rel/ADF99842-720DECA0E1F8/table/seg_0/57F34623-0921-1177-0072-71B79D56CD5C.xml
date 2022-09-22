@@ -1,0 +1,83 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="57F34623-0921-1177-0072-71B79D56CD5C" name="ezenorders">
+<createdBy>user</createdBy>
+<createdTime>2022-07-18 02:54:51 UTC</createdTime>
+<ownerDesignName>projectTable</ownerDesignName>
+<ordsAlias>table_5</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="num" id="037FE165-4ABB-5981-BFAB-73E4DAA8426F">
+<createdBy>user</createdBy>
+<createdTime>2022-07-18 02:55:36 UTC</createdTime>
+<ownerDesignName>projectTable</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1000</dataTypePrecision>
+<ownDataTypeParameters>,1000,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="order_number" id="7D71C9F3-48DB-7063-017F-8C4D89A65D78">
+<createdBy>user</createdBy>
+<createdTime>2022-07-18 02:56:00 UTC</createdTime>
+<ownerDesignName>projectTable</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="order_qty" id="6040B945-396F-5332-78BC-A4A820E952CA">
+<createdBy>user</createdBy>
+<createdTime>2022-07-18 02:56:54 UTC</createdTime>
+<ownerDesignName>projectTable</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>20</dataTypePrecision>
+<ownDataTypeParameters>,20,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="member_number" id="FEC5CD35-FD90-5710-71FF-11EC0185B8DD">
+<createdBy>user</createdBy>
+<createdTime>2022-07-18 02:58:52 UTC</createdTime>
+<ownerDesignName>projectTable</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="book_id" id="D2CE70AD-123B-E355-B262-99F2D213D326">
+<createdBy>user</createdBy>
+<createdTime>2022-07-18 02:59:38 UTC</createdTime>
+<ownerDesignName>projectTable</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="order_status" id="8E93BDAF-EDD6-CAA9-52BE-782CF31D86ED">
+<createdBy>user</createdBy>
+<createdTime>2022-07-18 03:00:02 UTC</createdTime>
+<ownerDesignName>projectTable</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<ownDataTypeParameters>,1,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+</Table>

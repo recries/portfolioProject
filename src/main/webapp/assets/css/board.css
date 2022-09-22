@@ -1,0 +1,78 @@
+
+#bodywrap{
+  position:relative;
+  width:70%;
+  margin-left:300px;
+  bottom: 155px;
+}
+
+table,tr,th,td{
+	border:1px solid black;
+	border-collapse: collapse;	
+}
+
+
+
+.pagelist a:hover, .pagelist .pagecolor{
+	text-decoration: underline;
+}
+
+#frm{
+	padding-left: 900px;
+}
+
+.table a {
+  text-decoration: none;
+  color: white;
+}
+
+
+#boardBtn{
+	position:relative;
+	padding-left:550px;
+	bottom:30px;
+}
+
+.pagelist a{
+	color:white;
+	top:10px;
+}
+
+.mypagelist a{
+	color:white;
+	bottom:40px;
+}
+
+#writeBtn {
+	position: relative;
+	right: 70px;
+}
+
+#boardquickmenu{
+	position: relative; 
+	top: 20px; 
+	left: 55px;
+	width: 176px;
+	bottom: 50px;
+}
+
+.page-link {
+  color: #fff; 
+  background-color: #000;
+  border-color: #fff;
+}
+
+.page-item.active .page-link {
+ z-index: 1;
+ color: #000;
+ font-weight:bold;
+ background-color: #fff;
+  border-color: #444;
+ 
+}
+
+.page-link:focus, .page-link:hover {
+  color: #ccc;
+  background-color: #222; 
+  border-color: #444;
+} 

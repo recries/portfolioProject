@@ -1,0 +1,25 @@
+.inner{
+ border-collapse: separate;
+  border-spacing: 0 10px;
+}
+.inner>tr{
+	height: 140px;
+	vertical-align: top;
+	cursor: pointer;
+	padding-bottom: 10px;
+}
+.inner>tr:hover{
+	border-radius: 5px;
+	background-color: #f5f5f5;
+	transition: all ease 1s 0s; 
+	transition-delay: 0.2s;
+}
+.inner>tr:active{
+	background-color: #f5f5f5;	
+}
+.inner>tr>td{
+		border-bottom: 1px solid #e5e5e5;
+	}
+.text_r{
+	text-align: right;
+}

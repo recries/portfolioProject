@@ -1,0 +1,162 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9DDC3B8F-368B-9E01-09C0-2CEB450670BA" schemaObject="052A7EB4-FA2C-52AD-4301-3823A221AB62" name="EZENMEMBERS">
+<sourceConnName>hyo</sourceConnName>
+<sourceObjSchema>HR</sourceObjSchema>
+<sourceObjName>EZENMEMBERS</sourceObjName>
+<createdBy>user</createdBy>
+<createdTime>2022-07-20 03:14:05 UTC</createdTime>
+<ownerDesignName>onlyERD</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="MEMBER_NUM" id="60D41B03-AEFE-5416-94E1-3C9C7989D07B">
+<sourceConnName>hyo</sourceConnName>
+<sourceObjSchema>EZENMEMBERS</sourceObjSchema>
+<sourceObjName>NUM</sourceObjName>
+<createdBy>user</createdBy>
+<createdTime>2022-07-20 03:14:05 UTC</createdTime>
+<ownerDesignName>onlyERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MEMBER_NUMBER" id="DAD8E056-A7E5-EC47-E05E-64F89A3C277F">
+<sourceConnName>hyo</sourceConnName>
+<sourceObjSchema>EZENMEMBERS</sourceObjSchema>
+<sourceObjName>MEMBER_NUMBER</sourceObjName>
+<createdBy>user</createdBy>
+<createdTime>2022-07-20 03:14:05 UTC</createdTime>
+<ownerDesignName>onlyERD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MEMBER_ID" id="E045F112-11BD-F11F-550D-86B7782292C4">
+<sourceConnName>hyo</sourceConnName>
+<sourceObjSchema>EZENMEMBERS</sourceObjSchema>
+<sourceObjName>MEMBER_ID</sourceObjName>
+<createdBy>user</createdBy>
+<createdTime>2022-07-20 03:14:05 UTC</createdTime>
+<ownerDesignName>onlyERD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 BYTE</dataTypeSize>
+<ownDataTypeParameters>30 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MEMBER_PASS" id="93A5C157-EFC2-1DFF-7BB9-3DC5B1FE0277">
+<sourceConnName>hyo</sourceConnName>
+<sourceObjSchema>EZENMEMBERS</sourceObjSchema>
+<sourceObjName>MEMBER_PASS</sourceObjName>
+<createdBy>user</createdBy>
+<createdTime>2022-07-20 03:14:05 UTC</createdTime>
+<ownerDesignName>onlyERD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 BYTE</dataTypeSize>
+<ownDataTypeParameters>30 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MEMBER_ADDRESS" id="8AF811F9-AAC4-635C-F91A-A62B944DB5AE">
+<sourceConnName>hyo</sourceConnName>
+<sourceObjSchema>EZENMEMBERS</sourceObjSchema>
+<sourceObjName>MEMBER_ADDRESS</sourceObjName>
+<createdBy>user</createdBy>
+<createdTime>2022-07-20 03:14:05 UTC</createdTime>
+<ownerDesignName>onlyERD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4000 BYTE</dataTypeSize>
+<ownDataTypeParameters>4000 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MEMBER_PHONE" id="D3C09AA4-B417-3E56-4CF5-34150D088CA0">
+<sourceConnName>hyo</sourceConnName>
+<sourceObjSchema>EZENMEMBERS</sourceObjSchema>
+<sourceObjName>MEMBER_PHONE</sourceObjName>
+<createdBy>user</createdBy>
+<createdTime>2022-07-20 03:14:05 UTC</createdTime>
+<ownerDesignName>onlyERD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 BYTE</dataTypeSize>
+<ownDataTypeParameters>30 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MEMBER_EMAIL" id="E8178C19-5601-ED4A-161F-225DD5B7825F">
+<sourceConnName>hyo</sourceConnName>
+<sourceObjSchema>EZENMEMBERS</sourceObjSchema>
+<sourceObjName>MEMBER_EMAIL</sourceObjName>
+<createdBy>user</createdBy>
+<createdTime>2022-07-20 03:14:05 UTC</createdTime>
+<ownerDesignName>onlyERD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>100 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MEMBER_TYPE" id="81886C95-0711-CCF8-C65C-31778A5581D1">
+<sourceConnName>hyo</sourceConnName>
+<sourceObjSchema>EZENMEMBERS</sourceObjSchema>
+<sourceObjName>MEMBER_TYPE</sourceObjName>
+<createdBy>user</createdBy>
+<createdTime>2022-07-20 03:14:05 UTC</createdTime>
+<ownerDesignName>onlyERD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,1,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MEMBER_STATUS" id="0681A64F-7ADC-9C39-04BF-FDA8A86C266E">
+<sourceConnName>hyo</sourceConnName>
+<sourceObjSchema>EZENMEMBERS</sourceObjSchema>
+<sourceObjName>MEMBER_STATUS</sourceObjName>
+<createdBy>user</createdBy>
+<createdTime>2022-07-20 03:14:05 UTC</createdTime>
+<ownerDesignName>onlyERD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,1,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="93035EE9-41AB-A984-E49E-1EFD790DD8A5" name="EZENMEMBERS_PK">
+<createdBy>user</createdBy>
+<createdTime>2022-07-20 03:14:19 UTC</createdTime>
+<ownerDesignName>onlyERD</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="60D41B03-AEFE-5416-94E1-3C9C7989D07B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

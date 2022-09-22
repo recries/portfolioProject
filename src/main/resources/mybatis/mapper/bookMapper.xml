@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    
+    
+    <mapper namespace="ezenproject.dao.BookDAO">
+    
+    <!-- 고객에게 보여지는 모든 책 갯수  -->
+    <select id="count" resultType="int">
+    select count(*) from ezenbooks
+    where book_status=1
+    </select>
+    
+    
+    <!-- 고객에게 보여지는 장르별 책 갯수  -->
+    <select id="countCategory" parameterType="int" resultType="int">
+    select count(*) from ezenbooks
+    where book_status=1
+    and book_category=#{book_category}
+    </select>
+    
+    <!-- 고객에게 보여지는 검색된 책 갯수  -->
+    <select id="countSearch" parameterType="String" resultType="int">
+    select count(*) from ezenbooks
+    where book_title like '%' || #{searchWord}||'%' or book_author like '%' || #{searchWord}||'%'
+    or book_publisher like '%' || #{searchWord}||'%'
+    
+    </select>
+    
+    
+    
+    <!-- 고객에게 보여지는 모든 책 리스트 -->
+     <select id="allBookList" parameterType="PageDTO" 
+    resultType="BookDTO">
+   
+   <![CDATA[
+    select b.*
+ from(select a.*, rownum as rm
+ from(select * from ezenbooks 
+ where book_status=1 order by num)a)b
+ where b.rm>=#{startRow} and b.rm<=#{endRow}
+   
+   ]]>
+    
+    </select>
+    
+    
+        <!-- 고객에게 보여지는 신작 책 리스트 -->
+     <select id="newBookList" parameterType="PageDTO" 
+    resultType="BookDTO">
+   
+   <![CDATA[
+    select b.*
+ from(select a.*, rownum as rm
+ from(select * from ezenbooks 
+ where book_status=1 order by num desc)a)b
+ where b.rm>=#{startRow} and b.rm<=#{endRow}
+   
+   ]]>
+    
+    </select>
+    
+     <!-- 고객에게 보여지는 장르 별 책 리스트 -->
+ 
+     <select id="categoryList"  parameterType="HashMap"
+    resultType="BookDTO">
+   
+   <![CDATA[
+    select b.*
+ from(select a.*, rownum as rm
+ from(select * from ezenbooks 
+ where book_status=1 
+ and book_category=#{book_category}
+ order by num)a)b
+ where b.rm>=#{startRow} and b.rm<=#{endRow}
+   
+   ]]>
+    
+    </select>
+    
+    
+     <!-- 고객에게 보여지는 검색된 책 리스트 -->
+ 
+     <select id="searchList"  parameterType="PageDTO"
+    resultType="BookDTO">
+   
+   <![CDATA[
+    select b.*
+ from(select a.*, rownum as rm
+ from(select * from ezenbooks 
+ where book_status=1 
+ and book_title like '%' || #{searchWord}||'%' or book_author like '%' || #{searchWord}||'%'
+    or book_publisher like '%' || #{searchWord}||'%'
+ )a)b
+ where b.rm>=#{startRow} and b.rm<=#{endRow}
+   
+   ]]>
+    
+    </select>
+    
+    
+    
+    <!--도서 상세페이지에 도서 불러오기  -->
+     <select id="content" parameterType="int" resultType="BookDTO">
+    select*from ezenbooks where num=#{num}
+    and book_status=1
+    </select>
+ 
+     
+    
+    <!-- //////////////////여기서부터 관리자 페이지 매퍼입니다.////////////////////////  -->
+    
+    <select id="list" resultType="BookDTO">
+    <![CDATA[
+    select * from ezenbooks order by num
+     ]]>
+    </select>
+    
+    
+    <select id="selectOne" resultType="BookDTO">
+    select*from ezenbooks where num=#{num}
+    </select>
+    
+    
+    <update id="statusChangeOn" parameterType="BookDTO">
+    update ezenbooks set
+    book_status=1
+    where num=#{num}
+    </update>
+    
+    <update id="statusChangeOff" parameterType="BookDTO">
+    update ezenbooks set
+    book_status=0
+    where num=#{num}
+    </update>
+    
+    
+    
+    <update id="stockChangeOn" parameterType="BookDTO">
+    update ezenbooks set
+    book_stock=1
+    where num=#{num}
+    </update>
+    
+    <update id="stockChangeOff" parameterType="BookDTO">
+    update ezenbooks set
+    book_stock=0
+    where num=#{num}
+    </update>
+    
+    
+    <insert id="saveNewBook" parameterType="BookDTO">
+    insert into ezenbooks
+    (num,book_id, book_title, book_author, book_publisher, book_price, book_content,
+    book_category, book_isbn, book_img, book_stock, book_status )
+    values(ezenbooks_num_seq.nextval, #{book_id}, #{book_title}, #{book_author},
+    #{book_publisher}, #{book_price}, #{book_content}, #{book_category}, #{book_isbn},
+    #{book_img,jdbcType=VARCHAR}, 1,1
+    )
+    </insert>
+    
+    <select id="getFile" parameterType="int" resultType="String">
+   select NVL(book_img, 0) from ezenbooks where num=#{num}
+   </select>
+    
+    
+    <delete id="deleteData" parameterType="int">
+    delete from ezenbooks
+    where num=#{num}
+    </delete>
+    
+    
+    <update id="updateBook" parameterType="BookDTO">
+    update ezenbooks set
+    book_title=#{book_title},
+    book_author=#{book_author},
+    book_publisher=#{book_publisher},
+    book_price=#{book_price},
+    book_content=#{book_content},
+    book_category=#{book_category},
+    book_isbn=#{book_isbn}
+    
+   <if test="book_img!=null">
+    ,book_img=#{book_img,jdbcType=VARCHAR}
+     </if> 
+    
+    where num=#{num}
+    
+    </update>
+    
+    
+    <!--////////////////////여기까지 관리자 페이지 매퍼입니다.///////////////////////////  -->
+    
+    </mapper>

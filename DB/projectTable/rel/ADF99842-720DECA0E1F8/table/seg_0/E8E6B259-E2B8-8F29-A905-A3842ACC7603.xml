@@ -1,0 +1,131 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E8E6B259-E2B8-8F29-A905-A3842ACC7603" name="ezenbooks">
+<createdBy>user</createdBy>
+<createdTime>2022-07-18 01:53:54 UTC</createdTime>
+<ownerDesignName>projectTable</ownerDesignName>
+<ordsAlias>table_2</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="num" id="AAA95E3E-1C64-2FA0-F846-BAFCDC16E12B">
+<createdBy>user</createdBy>
+<createdTime>2022-07-18 01:54:51 UTC</createdTime>
+<ownerDesignName>projectTable</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="book_id" id="52A229C6-7544-CBC7-120F-AFB6AC56C032">
+<createdBy>user</createdBy>
+<createdTime>2022-07-18 01:56:18 UTC</createdTime>
+<ownerDesignName>projectTable</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="book_title" id="5F7A93A5-3ABB-946D-66AE-D573DF358907">
+<createdBy>user</createdBy>
+<createdTime>2022-07-18 01:56:55 UTC</createdTime>
+<ownerDesignName>projectTable</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="book_price" id="C4ADA845-23BC-92BA-8043-17F17FA2271C">
+<createdBy>user</createdBy>
+<createdTime>2022-07-18 01:58:02 UTC</createdTime>
+<ownerDesignName>projectTable</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>20</dataTypePrecision>
+<ownDataTypeParameters>,20,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="book_content" id="3A6F992F-4974-180A-202A-C3E55CFC48C7">
+<createdBy>user</createdBy>
+<createdTime>2022-07-18 02:03:08 UTC</createdTime>
+<ownerDesignName>projectTable</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+<ownDataTypeParameters>4000,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="book_category" id="E4F17CE6-5E9D-749E-12B6-A1132D5AAE7F">
+<createdBy>user</createdBy>
+<createdTime>2022-07-18 02:04:09 UTC</createdTime>
+<ownerDesignName>projectTable</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="book_isbn" id="D898AF95-711B-2EC7-E02B-741D0E758927">
+<createdBy>user</createdBy>
+<createdTime>2022-07-18 02:09:06 UTC</createdTime>
+<ownerDesignName>projectTable</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="book_img" id="5E9C51BE-BF09-DE43-7026-D5086F18C0D2">
+<createdBy>user</createdBy>
+<createdTime>2022-07-18 02:09:41 UTC</createdTime>
+<ownerDesignName>projectTable</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+<ownDataTypeParameters>4000,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="book_stock" id="D221E0A6-FE2A-6AA2-2958-02D1D6F17D03">
+<createdBy>user</createdBy>
+<createdTime>2022-07-18 02:10:25 UTC</createdTime>
+<ownerDesignName>projectTable</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<ownDataTypeParameters>,1,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="book_status" id="D4E56D8B-E5F7-9439-CCC2-D70C7A9FF496">
+<createdBy>user</createdBy>
+<createdTime>2022-07-18 02:10:40 UTC</createdTime>
+<ownerDesignName>projectTable</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<ownDataTypeParameters>,1,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+</Table>

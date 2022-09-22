@@ -1,0 +1,84 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="EZENBOOKS" directorySegmentName="seg_0" id="8D199B9E-C830-F363-2A04-5BC96C898AE2">
+<createdBy>user</createdBy>
+<createdTime>2022-07-20 03:15:02 UTC</createdTime>
+<ownerDesignName>onlyERD</ownerDesignName>
+<schemaObject>052A7EB4-FA2C-52AD-4301-3823A221AB62</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>EF0FFA5B-0DD1-EFA1-E00B-129758FE7A49</segment>
+<tableSpace>3F85982B-6D9B-C177-4C79-3B7A9753D005</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="BOOK_STOCK" id="38AD71C8-0680-A12C-1127-DF0FCCF9229C">
+<createdBy>user</createdBy>
+<createdTime>2022-07-20 03:15:02 UTC</createdTime>
+<ownerDesignName>onlyERD</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="BOOK_AUTHOR" id="46338E01-7383-0BE0-3164-6B33D0587BA1">
+<createdBy>user</createdBy>
+<createdTime>2022-07-20 03:15:02 UTC</createdTime>
+<ownerDesignName>onlyERD</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="BOOK_NUM" id="4795F8C7-FBB8-688F-7557-B2EDB879BCA5">
+<createdBy>user</createdBy>
+<createdTime>2022-07-20 03:15:02 UTC</createdTime>
+<ownerDesignName>onlyERD</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="BOOK_STATUS" id="4EE7F646-A3B2-D7D5-AFAA-340666DD2AEC">
+<createdBy>user</createdBy>
+<createdTime>2022-07-20 03:15:02 UTC</createdTime>
+<ownerDesignName>onlyERD</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="BOOK_CONTENT" id="512B3F21-EABF-42E8-3B26-872BE451A7C4">
+<createdBy>user</createdBy>
+<createdTime>2022-07-20 03:15:02 UTC</createdTime>
+<ownerDesignName>onlyERD</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="BOOK_PUBLISHER" id="A9EBA0A4-B372-3B89-1DDF-53F0A8E91602">
+<createdBy>user</createdBy>
+<createdTime>2022-07-20 03:15:02 UTC</createdTime>
+<ownerDesignName>onlyERD</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="BOOK_IMG" id="ACA0C5D8-F420-8838-80EC-974CF8DE9A4B">
+<createdBy>user</createdBy>
+<createdTime>2022-07-20 03:15:02 UTC</createdTime>
+<ownerDesignName>onlyERD</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="BOOK_ISBN" id="AFF8F32D-B559-4C8E-B0FC-7A11C69316CE">
+<createdBy>user</createdBy>
+<createdTime>2022-07-20 03:15:02 UTC</createdTime>
+<ownerDesignName>onlyERD</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="BOOK_ID" id="C368AEA7-0FB1-B4B7-406F-6EB833941E82">
+<createdBy>user</createdBy>
+<createdTime>2022-07-20 03:15:02 UTC</createdTime>
+<ownerDesignName>onlyERD</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="BOOK_TITLE" id="CA95D2E1-69B5-4DFC-31F3-8D354C4B8988">
+<createdBy>user</createdBy>
+<createdTime>2022-07-20 03:15:02 UTC</createdTime>
+<ownerDesignName>onlyERD</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="BOOK_CATEGORY" id="E92FEBFF-5722-C75F-3E22-8D0AE72D8E60">
+<createdBy>user</createdBy>
+<createdTime>2022-07-20 03:15:02 UTC</createdTime>
+<ownerDesignName>onlyERD</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="BOOK_PRICE" id="F935C3A3-1810-5703-99A7-E0FDBAA0EBB4">
+<createdBy>user</createdBy>
+<createdTime>2022-07-20 03:15:02 UTC</createdTime>
+<ownerDesignName>onlyERD</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="EZENBOOKS_PK" id="BA5FC8BF-7E28-02F1-F849-89B03CEBEC79">
+<createdBy>user</createdBy>
+<createdTime>2022-07-20 03:15:24 UTC</createdTime>
+<ownerDesignName>onlyERD</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

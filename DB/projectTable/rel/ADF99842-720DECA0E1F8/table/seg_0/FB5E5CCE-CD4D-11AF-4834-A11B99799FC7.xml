@@ -1,0 +1,119 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FB5E5CCE-CD4D-11AF-4834-A11B99799FC7" name="ezenmembers">
+<createdBy>user</createdBy>
+<createdTime>2022-07-18 02:13:43 UTC</createdTime>
+<ownerDesignName>projectTable</ownerDesignName>
+<ordsAlias>table_3</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="num" id="29FBD540-355C-6681-A859-D02445EA6551">
+<createdBy>user</createdBy>
+<createdTime>2022-07-18 02:14:26 UTC</createdTime>
+<ownerDesignName>projectTable</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1000</dataTypePrecision>
+<ownDataTypeParameters>,1000,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="member_number" id="925FB510-3C51-8C16-36D1-131E053798EC">
+<createdBy>user</createdBy>
+<createdTime>2022-07-18 02:16:56 UTC</createdTime>
+<ownerDesignName>projectTable</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="member_id" id="56BC41C8-B614-31D5-DEEF-301FF79EE77C">
+<createdBy>user</createdBy>
+<createdTime>2022-07-18 02:48:13 UTC</createdTime>
+<ownerDesignName>projectTable</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="member_pass" id="FCD64627-3288-F9D1-9419-0B2B8A5F8D2E">
+<createdBy>user</createdBy>
+<createdTime>2022-07-18 02:49:11 UTC</createdTime>
+<ownerDesignName>projectTable</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="member_address" id="98A80823-AE76-7E2E-2BB9-994E3FC58050">
+<createdBy>user</createdBy>
+<createdTime>2022-07-18 02:49:52 UTC</createdTime>
+<ownerDesignName>projectTable</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+<ownDataTypeParameters>4000,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="member_phone" id="59376D2F-74B6-4D02-3CC3-50E3B4891B77">
+<createdBy>user</createdBy>
+<createdTime>2022-07-18 02:51:16 UTC</createdTime>
+<ownerDesignName>projectTable</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="member_email" id="0DD5A17A-63C3-72D7-F36F-480413B1FC86">
+<createdBy>user</createdBy>
+<createdTime>2022-07-18 02:51:40 UTC</createdTime>
+<ownerDesignName>projectTable</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="member_type" id="74812084-F1A2-AE12-9457-F50F52DA7C15">
+<createdBy>user</createdBy>
+<createdTime>2022-07-18 02:52:44 UTC</createdTime>
+<ownerDesignName>projectTable</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<ownDataTypeParameters>,1,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="member_status" id="2E851B6C-6859-D43D-F7D8-43AC0E196C92">
+<createdBy>user</createdBy>
+<createdTime>2022-07-18 02:53:00 UTC</createdTime>
+<ownerDesignName>projectTable</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<ownDataTypeParameters>,1,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+</Table>
